@@ -1,0 +1,34 @@
+{
+    "name": "vibe",
+    "version": "1.0",
+    "description": "Hide negative stuff on web page",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      },
+    "icons": {
+        "16": "bud.png",
+        "48": "bud.png",
+        "128": "bud.png"
+    },
+    "content_scripts":[
+        {
+            "matches":["https://news.google.com/*"],
+            "run_at":"document_end",
+            "js":["content.js"]
+        }
+    ],
+    "permissions": [
+        "activeTab"
+      ],
+    "browser_action":{
+        "default_popup":"popup.html",
+        "default_title":"vibe",
+        "default_icon": {
+            "16": "bud.png",
+            "48": "bud.png",
+            "128": "bud.png"
+        }
+    },
+    "manifest_version": 2
+  }
